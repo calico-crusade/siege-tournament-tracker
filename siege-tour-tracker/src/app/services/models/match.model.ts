@@ -1,5 +1,6 @@
 import { ILinkItem } from './link-item.model';
 
+//Represents the match object (see SiegeTournamentTracker.Api/Match.cs)
 export interface IMatch {
     teamOne:      ILinkItem;
     teamTwo:      ILinkItem;

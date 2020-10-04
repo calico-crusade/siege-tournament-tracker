@@ -21,3 +21,4 @@ Here is a collection of web-api endpoints and other useful URLs for the applicat
     * `/swagger` - Built in documentation using Swashbuckle / Swagger
     * `**` - SPA redirect to the angular routes
      
+All URLs can be resolved against localhost when running the site yourself.

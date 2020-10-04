@@ -7,13 +7,27 @@ using System.Threading.Tasks;
 
 namespace SiegeTournamentTracker.Web.Controllers.Api
 {
+	/// <summary>
+	/// API controller for fetching match information
+	/// </summary>
 	[Route("api/[controller]/[action]")]
 	[ApiController]
 	public class MatchesController : ControllerBase
 	{
+		/// <summary>
+		/// The logger (DI)
+		/// </summary>
 		private readonly ILogger _logger;
+		/// <summary>
+		/// The siege service (DI)
+		/// </summary>
 		private readonly ISiegeService _api;
 
+		/// <summary>
+		/// The dependency injected constructor
+		/// </summary>
+		/// <param name="logger">The logger</param>
+		/// <param name="api">The siege cache service</param>
 		public MatchesController(ILogger<MatchesController> logger, ISiegeService api)
 		{
 			_logger = logger;

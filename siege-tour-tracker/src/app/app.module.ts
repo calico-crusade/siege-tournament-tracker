@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
+//Our components and other things that need to be declared / imported
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatchesComponent } from './matches/matches.component';
@@ -11,6 +12,7 @@ import { MatchItemComponent } from './match-item/match-item.component';
 import { LiqImgUrlPipe } from './services/liq-img-url.pipe';
 import { DecodeHtmlPipe } from './services/decode-html.pipe';
 
+//Root module for the entire application, all imports and declarations can go in here since the app isn't using lazy-loading for routing.
 @NgModule({
   declarations: [
     AppComponent,

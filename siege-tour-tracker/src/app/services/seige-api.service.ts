@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IMatch, IDescription } from './models';
 
+//Service for connecting to the API
 @Injectable({
     providedIn: 'root'
 })

@@ -77,8 +77,9 @@ namespace SiegeTournamentTracker.Web
 			{
 				app.UseExceptionHandler("/Home/Error");
 			}
+			//use static files from wwwroot for virtual files
 			app.UseStaticFiles();
-
+			//Use MVC and API routing for controllers
 			app.UseRouting();
 
 			//Add Swagger/Swashbuckle
@@ -88,6 +89,7 @@ namespace SiegeTournamentTracker.Web
 				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Siege Tournament Tracker");
 			});
 
+			//Allow for proxying headers (for use with nginx)
 			app.UseForwardedHeaders(new ForwardedHeadersOptions
 			{
 				ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
@@ -95,12 +97,15 @@ namespace SiegeTournamentTracker.Web
 
 			app.UseAuthorization();
 
+			//Map the controller end points with the SPA fallback controller
 			app.UseEndpoints(endpoints =>
 			{
+				//The MVC and API controllers
 				endpoints.MapControllerRoute(
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}/{id?}");
 
+				//The default fallback controller (for SPA routing)
 				endpoints.MapFallbackToController("Index", "Home");
 			});
 		}

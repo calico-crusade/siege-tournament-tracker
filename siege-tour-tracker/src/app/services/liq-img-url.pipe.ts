@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//re-writes image URLs to use the caching service
 @Pipe({
   name: 'liqImgUrl'
 })

@@ -1,5 +1,8 @@
 ﻿namespace SiegeTournamentTracker.Api
 {
+    /// <summary>
+    /// The server's best determination of the matches status
+    /// </summary>
     public enum MatchStatus
     {
         /// <summary>

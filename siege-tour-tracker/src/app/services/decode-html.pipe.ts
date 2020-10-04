@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//Decodes any HTML escape characters (example: &<char>;)
 @Pipe({
   name: 'decodeHtml'
 })

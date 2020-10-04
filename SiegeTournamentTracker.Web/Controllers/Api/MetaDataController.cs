@@ -8,15 +8,37 @@ using System.Threading.Tasks;
 
 namespace SiegeTournamentTracker.Web.Controllers.Api
 {
+	/// <summary>
+	/// API controller for fetching meta data information
+	/// </summary>
 	[Route("api/[controller]/[action]")]
 	[ApiController]
 	public class MetaDataController : ControllerBase
 	{
+		/// <summary>
+		/// The logger (DI)
+		/// </summary>
 		private readonly ILogger _logger;
+		/// <summary>
+		/// The meta data service (DI)
+		/// </summary>
 		private readonly IMetaDataService _meta;
+		/// <summary>
+		/// The image cache service (DI)
+		/// </summary>
 		private readonly IImageCacheService _image;
+		/// <summary>
+		/// The siege cache service (DI)
+		/// </summary>
 		private readonly ISiegeService _api;
 
+		/// <summary>
+		/// The dependency injected constructor
+		/// </summary>
+		/// <param name="logger">The logger</param>
+		/// <param name="meta">The meta data service</param>
+		/// <param name="image">The image cache service</param>
+		/// <param name="api">The siege cache service</param>
 		public MetaDataController(
 			ILogger<MetaDataController> logger,
 			IMetaDataService meta,
@@ -78,6 +100,10 @@ namespace SiegeTournamentTracker.Web.Controllers.Api
 			}
 		}
 
+		/// <summary>
+		/// Fetches all of the leagues 
+		/// </summary>
+		/// <returns>The leagues</returns>
 		[HttpGet]
 		[ProducesResponseType(500)]
 		[ProducesResponseType(typeof(IEnumerable<string>), 200)]
