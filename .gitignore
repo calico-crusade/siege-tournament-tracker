@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Project specific ignores
+wwwroot/
+image_cache/
+ignore.*
+
 # User-specific files
 *.rsuser
 *.suo
@@ -274,8 +279,7 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
-wwwroot/
-ignore.*
+
 # Visual Studio 6 build log
 *.plg
 
