@@ -1,0 +1,15 @@
+@use 'src/theme.scss' as theme;
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    @include theme.main-theme;
+    color: #ffffff;
+}
+
+.pusher {
+    flex: 1;
+}
+
+.form-control {
+    @include theme.form-theme;
+}

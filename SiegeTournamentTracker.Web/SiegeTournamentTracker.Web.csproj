@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Descriptions\MatchStatus.enumdesc.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Descriptions\MatchStatus.enumdesc.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiegeTournamentTracker.Api.MetaData\SiegeTournamentTracker.Api.MetaData.csproj" />
+    <ProjectReference Include="..\SiegeTournamentTracker.Api\SiegeTournamentTracker.Api.csproj" />
+  </ItemGroup>
+
+</Project>

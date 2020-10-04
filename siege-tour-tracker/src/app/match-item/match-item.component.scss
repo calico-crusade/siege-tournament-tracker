@@ -1,0 +1,325 @@
+@use 'src/theme' as theme;
+
+$fore-color: #fff;
+$border-color: #aaaaaa;
+$border-type: 2px solid #{$border-color};
+$border-padding: 10px;
+
+.match-item {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    &.boarded {
+        @include theme.main-theme;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        margin-top: $border-padding;
+        padding-top: $border-padding;
+        padding-bottom: $border-padding;
+    }
+
+    &.loading {
+        text-align: center;
+    }
+
+    .team-displays {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+
+        .team-image {
+            flex: 1;
+            max-height: 50px;
+            display: flex;
+            flex-flow: row;
+
+            img {
+                flex: 1;
+            }
+        }
+
+        .vs {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+
+            &> * {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .team-text {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        padding-bottom: $border-padding;
+
+        .team-name {
+            flex: 1;
+
+            text-align: center;
+
+            a {
+                width: 100%;
+                text-align: center;
+                color: $fore-color;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:active,
+                &:hover {
+                    color: $fore-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .match-details {
+        @include theme.main-theme;
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        padding-top: $border-padding;
+
+        border-top-width: 2px;
+        border-top-style: solid;
+
+        .league-details {
+            max-width: 60%;
+            flex: 1;
+            padding-left: $border-padding;
+            display: flex;
+            flex-flow: row;
+
+            img {
+                max-height: 24px;
+                max-width: 24px;
+            }
+
+            .league-name {
+                flex: 1;
+                white-space: pre;
+                overflow: hidden;
+                color: $fore-color;
+
+                &:active,
+                &:hover {
+                    color: $fore-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .timestamp {
+            flex: 1;
+            text-align: center;
+        }
+    }
+
+    
+}
+
+.compact-less-match-item {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    font-size: 16px;
+
+    .team {
+        flex: 1;
+
+        &.right {
+            text-align: right;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 60px;
+            padding: 2px;
+        }
+
+        a {
+            color: $fore-color;
+            text-decoration: none;
+
+            &:hover,
+            &:active {
+                color: $fore-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .vs,
+    .timestamp {
+        font-size: 12px;
+        padding-top: 3px;
+        padding-left: 5px;
+    }
+}
+
+.compact-match-item {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    font-size: 16px;
+
+    &.boarded {
+        border: $border-type;
+        border-radius: 5px;
+        margin-top: $border-padding;
+        padding-top: $border-padding;
+        padding-bottom: $border-padding;
+    }
+
+    .team-image {
+        width: 90px;
+    }
+
+    .details {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        font-size: 12px;
+        padding: 0 10px;
+        max-width: calc(100% - 80px - 80px);
+
+        .team {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+
+            a {
+                flex: 1;
+                &.right {
+                    text-align: right;
+                }
+            }
+        }
+
+        .match-details {
+            display: flex;
+            flex-flow: row;
+            overflow: hidden;
+            img {
+                max-width: 16px;
+            }
+
+            a {
+                flex: 1;
+                white-space: pre;
+                padding-left: 3px;
+                overflow: hidden;
+            }
+
+            .timestamp {
+                margin-left: 10px;
+                text-align: right;
+            }
+        }
+    }
+}
+
+.expanded-match-item {
+    @include theme.main-theme;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    
+    margin-top: $border-padding;
+    padding-top: $border-padding;
+    padding-bottom: $border-padding;
+
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    .team-details {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        margin-bottom: 5px;
+
+        .team {
+            flex: 1;
+            display: flex;
+            flex-flow: column;
+
+            .image {
+                width: 100%;
+                flex: 1;
+                display: flex;
+                flex-flow: row;
+            }
+
+            .text {
+                width: 100%;
+                display: flex;
+                flex-flow: row;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        .vs {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+
+            &> * {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .match-details {
+        @include theme.main-theme;
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        padding-top: $border-padding;
+
+        border-top-width: 2px;
+        border-top-style: solid;
+
+        .league-details {
+            max-width: 60%;
+            flex: 1;
+            padding-left: $border-padding;
+            display: flex;
+            flex-flow: row;
+
+            img {
+                max-height: 24px;
+                max-width: 24px;
+            }
+
+            .league-name {
+                flex: 1;
+                white-space: pre;
+                overflow: hidden;
+                color: $fore-color;
+
+                &:active,
+                &:hover {
+                    color: $fore-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .timestamp {
+            flex: 1;
+            text-align: center;
+        }
+    }
+}

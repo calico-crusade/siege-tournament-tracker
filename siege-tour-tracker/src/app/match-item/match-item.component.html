@@ -1,0 +1,150 @@
+<div class="match-item loading boarded" *ngIf="match === null">
+    <div class="pusher"></div>
+    <span>
+        <i class="fa fa-spin fa-sync"></i> Loading Match Data...
+    </span>
+    <div class="pusher"></div>
+</div>
+
+<div class="expanded-match-item" *ngIf="match !== null && type === 'expanded'">
+    <div class="team-details">
+        <div class="team">
+            <div class="image">
+                <div class="pusher"></div>
+                <img src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+                <div class="pusher"></div>
+            </div>
+            <div class="text">
+                <div class="pusher"></div>
+                <a [href]="match.teamOne.url" target="_blank">{{ match.teamOne.fullName | decodeHtml }}</a>
+                <div class="pusher"></div>
+            </div>
+        </div>
+        <div class="vs">
+            <div class="pusher"></div>
+            <span class="vs-text">VS</span>
+            <span class="score" 
+                  *ngIf="match.teamOneScore != null && match.teamTwoScore != null">
+                {{ match.teamOneScore }}:{{ match.teamTwoScore }}
+            </span>
+            <span class="bestof">BO{{ match.bestOf }}</span>
+            <div class="pusher"></div>
+        </div>
+        <div class="team">
+            <div class="image">
+                <div class="pusher"></div>
+                <img src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+                <div class="pusher"></div>
+            </div>
+            <div class="text">
+                <div class="pusher"></div>
+                <a [href]="match.teamTwo.url" target="_blank">{{ match.teamTwo.fullName | decodeHtml }}</a>
+                <div class="pusher"></div>
+            </div>
+        </div>
+    </div>
+    <div class="match-details">
+        <div class="league-details">
+            <img src="{{ match.league.imageUrl | liqImgUrl }}" />
+            <a [href]="match.league.url" target="_blank" class="league-name">
+                {{ match.league.name | decodeHtml }}
+            </a>
+        </div>
+
+        <span class="timestamp">{{ match.offset | date:'MMM dd @ HH:mm' }}</span>
+    </div>
+</div>
+
+<div class="match-item boarded" 
+     *ngIf="match !== null && type === 'expanded-old'">
+    <div class="team-displays">
+        <div class="team-image">
+            <div class="pusher"></div>
+            <img src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+            <div class="pusher"></div>
+        </div>
+        <div class="vs">
+            <div class="pusher"></div>
+            <span class="vs-text">VS</span>
+            <span class="score" 
+                  *ngIf="match.teamOneScore != null && match.teamTwoScore != null">
+                {{ match.teamOneScore }}:{{ match.teamTwoScore }}
+            </span>
+            <span class="bestof">BO{{ match.bestOf }}</span>
+            <div class="pusher"></div>
+        </div>
+        <div class="team-image">
+            <div class="pusher"></div>
+            <img src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+            <div class="pusher"></div>
+        </div>
+    </div>
+    <div class="team-text">
+        <div class="team-name">
+            <a [href]="match.teamOne.url" target="_blank">{{ match.teamOne.fullName | decodeHtml }}</a>
+        </div>
+        <div class="team-name">
+            <a [href]="match.teamTwo.url" target="_blank">{{ match.teamTwo.fullName | decodeHtml }}</a>
+        </div>
+    </div>
+    <div class="match-details">
+        <div class="league-details">
+            <img src="{{ match.league.imageUrl | liqImgUrl }}" />
+            <a [href]="match.league.url" target="_blank" class="league-name">
+                {{ match.league.name | decodeHtml }}
+            </a>
+        </div>
+
+        <span class="timestamp">{{ match.offset | date:'MMM dd @ HH:mm' }}</span>
+    </div>
+</div>
+
+<div class="compact-less-match-item" 
+     *ngIf="match !== null && type === 'compact-less'">
+
+    <div class="team">
+        <img src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+        <a [href]="match.teamOne.url" target="_blank">{{ match.teamOne.name | decodeHtml }}</a>
+    </div>
+    <div class="vs" 
+         *ngIf="match.teamOneScore != null && match.teamTwoScore != null">
+         {{ match.teamOneScore }}:{{ match.teamTwoScore }} (BO{{ match.bestOf }})
+    </div>
+    <div class="vs" 
+         *ngIf="match.teamOneScore == null || match.teamTwoScore == null">
+        VS (BO{{ match.bestOf }})
+    </div>
+    <div class="timestamp">{{ match.offset | date:'MMM dd @ HH:mm' }}</div>
+    <div class="team right">
+        <a [href]="match.teamTwo.url" target="_blank">{{ match.teamTwo.name | decodeHtml }}</a>
+        <img src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+    </div>
+</div>
+
+<div class="compact-match-item boarded" 
+     *ngIf="match !== null && type === 'compact'">
+    <img class="team-image" src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+    <div class="details">
+        <div class="pusher"></div>
+        <div class="team">
+            <a [href]="match.teamOne.url" target="_blank">{{ match.teamOne.name | decodeHtml }}</a>
+            <div class="vs" 
+                 *ngIf="match.teamOneScore != null && match.teamTwoScore != null">
+                {{ match.teamOneScore }}:{{ match.teamTwoScore }} (BO{{ match.bestOf }})
+            </div>
+            <div class="vs" 
+                 *ngIf="match.teamOneScore == null || match.teamTwoScore == null">
+                VS (BO{{ match.bestOf }})
+            </div>
+            <a class="right" [href]="match.teamTwo.url" target="_blank">{{ match.teamTwo.name | decodeHtml }}</a>
+        </div>
+        <div class="pusher"></div>
+        <div class="match-details">
+            <img src="{{ match.league.imageUrl | liqImgUrl }}" />
+            <a [href]="match.league.url" target="_blank">{{ match.league.name | decodeHtml }}</a>
+            <span class="timestamp">{{ match.offset | date:'MMM dd @ HH:mm' }}</span>
+        </div>
+        <div class="pusher"></div>
+    </div>
+    <img class="team-image" src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+</div>

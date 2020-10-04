@@ -1,0 +1,20 @@
+@use 'src/theme' as theme;
+
+$nav-height: 56px;
+$max-height: calc(100% - #{$nav-height});
+
+nav {
+    @include theme.nav-theme;
+}
+
+.full-body {
+    @include theme.main-theme;
+    position: fixed;
+    top: $nav-height;
+    left: 0;
+    width: 100%;
+    height: $max-height;
+    max-height: $max-height;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

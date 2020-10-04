@@ -1,0 +1,26 @@
+
+$main-border-color: rgba(72, 78, 81);
+$main-color: #fff;
+$main-background-color: rgb(23, 24, 25);
+
+$navbar-background-color: rgb(44, 47, 49);
+
+$form-border-color: rgb(60, 65, 68);
+$form-color: rgb(181, 175, 166);
+$form-background-color: rgb(24, 26, 27);
+
+@mixin form-theme {
+    color: $form-color;
+    border-color: $form-border-color;
+    background-color: $form-background-color;
+}
+
+@mixin main-theme {
+    color: $main-color;
+    border-color: $main-border-color;
+    background-color: $main-background-color;
+}
+
+@mixin nav-theme {
+    background-color: $navbar-background-color;
+}

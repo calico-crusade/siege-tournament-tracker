@@ -1,0 +1,52 @@
+<div class="row matches-wrapper">
+    <div class="col-12">
+        <div class="accordion" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <span>Filters</span> 
+                        <i class="fa fa-arrow-down ml-auto icon"></i>
+                        <i class="fa fa-arrow-up ml-auto icon"></i>
+                    </button>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-lg-6 col-xl-4">
+                                <label for="type-box">Match Format:</label>
+                                <select id="type-box" [(ngModel)]="type" class="form-control">
+                                    <option *ngFor="let t of types" [value]="t">{{ t }}</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-6 col-xl-4">
+                                <label for="match-box">Match Status:</label>
+                                <select id="match-box" [(ngModel)]="status" class="form-control">
+                                    <option *ngFor="let t of descriptions" [value]="t.value">{{ t.displayName }}</option>
+                                    <option value="-1">All</option>
+                                    <option value="-2">Finished</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-6 col-xl-4">
+                                <label for="league-box">League:</label>
+                                <select id="league-box" [(ngModel)]="league" class="form-control">
+                                    <option *ngFor="let t of leagues" [value]="t">{{ t }}</option>
+                                    <option value="">All</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-6 col-xl-4">
+                                <label for="search-box">Search:</label>
+                                <input id="search-box" type="text" [(ngModel)]="searchText" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row matches-wrapper">
+    <div class="col-12 col-sm-12 col-lg-6 col-xl-4" *ngFor="let match of searchedMatches">
+        <app-match-item [match]="match" 
+                        [type]="type"></app-match-item>
+    </div>
+</div>

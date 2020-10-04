@@ -1,0 +1,43 @@
+{
+	"Type": "MatchStatus",
+	"Descriptions": {
+		"en": [
+			{
+				"Value": 0,
+				"Name": "Unknown",
+				"DisplayName": "Unknown",
+				"Description": "Could not determine the status of this match from the data available"
+			},
+			{
+				"Value": 1,
+				"Name": "TeamOneWon",
+				"DisplayName": "Team #1 Won!",
+				"Description": "{0} beat {1}!"
+			},
+			{
+				"Value": 2,
+				"Name": "TeamTwoWon",
+				"DisplayName": "Team #2 Won!",
+				"Description": "{1} beat {0}!"
+			},
+			{
+				"Value": 3,
+				"Name": "Draw",
+				"DisplayName": "Draw!",
+				"Description": "It was a draw between {0} and {1}"
+			},
+			{
+				"Value": 4,
+				"Name": "Active",
+				"DisplayName": "Ongoing",
+				"Description": "The match is currently on going! Check back to see the status!"
+			},
+			{
+				"Value": 5,
+				"Name": "Upcoming",
+				"DisplayName": "Upcoming",
+				"Description": "The match is coming up! It starts at {2}!"
+			}
+		]
+	}
+}

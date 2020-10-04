@@ -1,0 +1,52 @@
+@use 'src/theme.scss' as theme;
+
+.matches-wrapper {
+    margin: 10px;
+}
+
+.card {
+    @include theme.main-theme;
+    border-width: 2px;
+
+    .card-header {
+        @include theme.main-theme;
+        border-width: 2px;
+        padding: 5px;
+
+        button {
+            @include theme.main-theme;
+            border: none;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            flex-flow: row;
+            color: #fff;
+
+            span {
+                flex: 1;
+            }
+
+            .icon {
+                margin-top: 3px;
+            }
+
+            .fa-arrow-down {
+                display: none !important;
+            }
+
+            .fa-arrow-up {
+                display: inline-block !important;
+            }
+
+            &.collapsed {
+                .fa-arrow-down {
+                    display: inline-block !important;
+                }
+
+                .fa-arrow-up {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
