@@ -1,0 +1,46 @@
+<div class="calendar-wrapper">
+    <div class="header">
+        <div class="date">
+            <h4>October 2020</h4>
+        </div>
+        <div class="pusher"></div>
+        <div class="views">
+            <div class="btn-group">
+                <button class="btn btn-primary">Day</button>
+                <button class="btn btn-primary">Week</button>
+                <button class="btn btn-primary">Month</button>
+            </div>
+        </div>
+        <div class="pusher"></div>
+        <div class="switches">
+            <div class="btn-group">
+                <button class="btn btn-primary">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-primary">
+                    Today
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="week-days">
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thur</span>
+        <span>Fri</span>
+        <span>Sat</span>
+        <span>Sun</span>
+    </div>
+    <div class="calendar">
+        <div class="day {{ getClassName(day) }}" *ngFor="let day of days">
+            <div class="number">{{ day.date.getDate() }}</div>
+            <div class="events">
+                <app-match-item [match]="event" type="super-compact" *ngFor="let event of day.events" style="width: 100%;"></app-match-item>
+            </div>
+        </div>
+    </div>
+</div>

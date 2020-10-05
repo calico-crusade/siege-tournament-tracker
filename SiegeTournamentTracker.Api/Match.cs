@@ -45,7 +45,7 @@ namespace SiegeTournamentTracker.Api
         /// <summary>
         /// The server's local time for this event
         /// </summary>
-        public DateTime LocalTime => Offset.UtcDateTime.ToLocalTime();
+        public DateTime Timestamp => Offset.DateTime;
         
         /// <summary>
         /// The server's best guess at the status of the match
@@ -67,7 +67,7 @@ namespace SiegeTournamentTracker.Api
                 }
 
                 var now = DateTime.Now;
-                var local = LocalTime;
+                var local = Timestamp;
                 if (local > now)
                     return MatchStatus.Upcoming;
 

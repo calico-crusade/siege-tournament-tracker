@@ -5,9 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'liqImgUrl'
 })
 export class LiqImgUrlPipe implements PipeTransform {
-    transform(value: string): string {
-        if (value == null)
+    transform(value: string, type?: string): string {
+        if (value == null) {
+            if (type === 'match')
+                return '/assets/r6-logo-compact.png';
             return '/assets/r6-logo.png';
+        }
 
         return `/api/metadata/image?url=${value}`;
     }

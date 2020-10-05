@@ -9,6 +9,6 @@ export interface IMatch {
     offset:       Date;
     league:       ILinkItem;
     bestOf:       number;
-    localTime:    Date;
+    timestamp:    Date;
     status:       number;
 }

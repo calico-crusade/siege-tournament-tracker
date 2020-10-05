@@ -91,7 +91,7 @@ namespace SiegeTournamentTracker.Api
 					.Matches())
 					.Where(t => !string.IsNullOrEmpty(t.TeamOne.FullName) ||
 								!string.IsNullOrEmpty(t.TeamTwo.FullName))
-					.OrderBy(t => t.LocalTime)
+					.OrderBy(t => t.Timestamp)
 					.ToList();
 				_cacheTime = DateTime.Now;
 			}

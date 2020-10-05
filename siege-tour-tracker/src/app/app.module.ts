@@ -11,6 +11,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MatchItemComponent } from './match-item/match-item.component';
 import { LiqImgUrlPipe } from './services/liq-img-url.pipe';
 import { DecodeHtmlPipe } from './services/decode-html.pipe';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 //Root module for the entire application, all imports and declarations can go in here since the app isn't using lazy-loading for routing.
 @NgModule({
@@ -20,7 +22,9 @@ import { DecodeHtmlPipe } from './services/decode-html.pipe';
     NotFoundComponent,
     MatchItemComponent,
     LiqImgUrlPipe,
-    DecodeHtmlPipe
+    DecodeHtmlPipe,
+    CalendarComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,

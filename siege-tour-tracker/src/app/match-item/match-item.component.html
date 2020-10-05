@@ -11,7 +11,7 @@
         <div class="team">
             <div class="image">
                 <div class="pusher"></div>
-                <img src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+                <img src="{{ match.teamOne.imageUrl | liqImgUrl:'match' }}" />
                 <div class="pusher"></div>
             </div>
             <div class="text">
@@ -33,7 +33,7 @@
         <div class="team">
             <div class="image">
                 <div class="pusher"></div>
-                <img src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+                <img src="{{ match.teamTwo.imageUrl | liqImgUrl:'match' }}" />
                 <div class="pusher"></div>
             </div>
             <div class="text">
@@ -60,7 +60,7 @@
     <div class="team-displays">
         <div class="team-image">
             <div class="pusher"></div>
-            <img src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+            <img src="{{ match.teamOne.imageUrl | liqImgUrl:'match' }}" />
             <div class="pusher"></div>
         </div>
         <div class="vs">
@@ -75,7 +75,7 @@
         </div>
         <div class="team-image">
             <div class="pusher"></div>
-            <img src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+            <img src="{{ match.teamTwo.imageUrl | liqImgUrl:'match' }}" />
             <div class="pusher"></div>
         </div>
     </div>
@@ -103,7 +103,7 @@
      *ngIf="match !== null && type === 'compact-less'">
 
     <div class="team">
-        <img src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+        <img src="{{ match.teamOne.imageUrl | liqImgUrl:'match' }}" />
         <a [href]="match.teamOne.url" target="_blank">{{ match.teamOne.name | decodeHtml }}</a>
     </div>
     <div class="vs" 
@@ -117,13 +117,13 @@
     <div class="timestamp">{{ match.offset | date:'MMM dd @ HH:mm' }}</div>
     <div class="team right">
         <a [href]="match.teamTwo.url" target="_blank">{{ match.teamTwo.name | decodeHtml }}</a>
-        <img src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+        <img src="{{ match.teamTwo.imageUrl | liqImgUrl:'match' }}" />
     </div>
 </div>
 
 <div class="compact-match-item boarded" 
      *ngIf="match !== null && type === 'compact'">
-    <img class="team-image" src="{{ match.teamOne.imageUrl | liqImgUrl }}" />
+    <img class="team-image" src="{{ match.teamOne.imageUrl | liqImgUrl:'match' }}" />
     <div class="details">
         <div class="pusher"></div>
         <div class="team">
@@ -146,5 +146,11 @@
         </div>
         <div class="pusher"></div>
     </div>
-    <img class="team-image" src="{{ match.teamTwo.imageUrl | liqImgUrl }}" />
+    <img class="team-image" src="{{ match.teamTwo.imageUrl | liqImgUrl:'match' }}" />
+</div>
+
+<div class="super-compact" *ngIf="match !== null && type === 'super-compact'">
+    <span>{{ match.teamOne.name }} vs {{ match.teamTwo.name }}</span>
+    <div class="pusher"></div>
+    <span class="details">{{ match.bestOf > 1 ? 'BO' + match.bestOf : ''}} {{ match.offset | date:'HH:mm' }} {{ match.teamOneScore != null && match.teamTwoScore != null ? match.teamOneScore + ':' + match.teamTwoScore : '' }}</span>
 </div>

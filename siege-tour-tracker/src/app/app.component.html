@@ -1,7 +1,7 @@
 <!--Application navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="d-flex flex-grow-1">
-        <a class="navbar-brand" href="#">R6 Match Tracker</a>
+        <a class="navbar-brand" routerLink="/matches">R6 Match Tracker</a>
         <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,13 @@
     <!--Couple of links to other sites of interest-->
     <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto flex-nowrap">
-            <li class="nav-item active">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/matches" routerLinkActive>Matches</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/forecast" routerLinkActive>Forecast</a>
+            </li>
+            <!--<li class="nav-item active">
                 <a class="nav-link" href="http://git.index-0.com" target="_blank">Github</a>
             </li>
             <li class="nav-item active">
@@ -19,7 +25,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="http://umc-loader.index-0.com" target="_blank">UMC Loader</a>
-            </li>
+            </li>-->
         </ul>
     </div>
 </nav>

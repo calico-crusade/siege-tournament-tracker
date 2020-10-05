@@ -20,7 +20,7 @@ namespace SiegeTournamentTracker.CLI
 
             foreach(var match in upcoming)
             {
-                Console.WriteLine($"{match.TeamOne.FullName} vs {match.TeamTwo.FullName} - {match.LocalTime:HH:mm}");
+                Console.WriteLine($"{match.TeamOne.FullName} vs {match.TeamTwo.FullName} - {match.Timestamp:HH:mm}");
             }
 
             Console.WriteLine("Finished");

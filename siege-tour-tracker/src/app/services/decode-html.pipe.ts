@@ -9,7 +9,11 @@ export class DecodeHtmlPipe implements PipeTransform {
     transform(value: string) {
         const template = document.createElement('div');
         template.innerHTML = value;
-        return template.innerText;
+        var text = template.innerText;
+        if (text === '')
+            return 'TBD';
+
+        return text;
     }
 
 }

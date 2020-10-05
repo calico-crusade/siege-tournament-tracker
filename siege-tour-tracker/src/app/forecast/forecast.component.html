@@ -1,0 +1,23 @@
+<div class="wrapper d-none d-lg-flex">
+    <div class="forecast" *ngFor="let day of matchdays">
+        <div class="header {{ day.offset == 0 ? 'current' : '' }}">
+            {{ day.date | date:'EEE - dd' }}
+        </div>
+        <div class="matches">
+            <app-match-item *ngFor="let match of day.matches" type="expanded" [match]="match"></app-match-item>
+        </div>
+    </div>
+</div>
+
+<div class="mobile-wrapper d-flex d-lg-none">
+    <div class="forecast">
+        <button [ngClass]="{'header': true, 'active': selected === day.offset, 'current': day.offset === 0 }" 
+                *ngFor="let day of matchdays"
+                (click)="selected = day.offset">
+            {{ day.date | date:'EEE - dd' }}
+        </button>
+    </div>
+    <div [ngClass]="{'matches': true, 'display': selected == day.offset }" *ngFor="let day of matchdays">
+        <app-match-item *ngFor="let match of day.matches" type="expanded" [match]="match"></app-match-item>
+    </div>
+</div>

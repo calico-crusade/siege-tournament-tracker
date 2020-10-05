@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ForecastComponent } from './forecast/forecast.component';
 import { MatchesComponent } from './matches/matches.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -16,6 +18,15 @@ const routes: Routes = [
         path: 'matches',
         component: MatchesComponent
     }, 
+    //Calendar route
+    {
+        path: 'calendar',
+        component: CalendarComponent
+    },
+    {
+        path: 'forecast',
+        component: ForecastComponent
+    },
     //Every other route
     {
         path: '**',

@@ -12,7 +12,7 @@ export class MatchItemComponent {
     match: IMatch = null;
 
     @Input()
-    type: ('compact' | 'compact-less' | 'expanded' | 'expanded-old') = 'compact';
+    type: ('compact' | 'compact-less' | 'expanded' | 'expanded-old' | 'super-compact') = 'compact';
 
     constructor() { }
 }

@@ -85,7 +85,7 @@ namespace SiegeTournamentTracker.Web.Controllers.Api
 			try
 			{
 				if (string.IsNullOrEmpty(url))
-					return PhysicalFile("wwwroot/assets/r6-logo.png", "image/png");
+					return PhysicalFile("wwwroot/assets/r6-logo-compact.png", "image/png");
 
 				if (!url.ToLower().StartsWith(TournamentApi.BASE_URL.ToLower()))
 					return NotFound();
