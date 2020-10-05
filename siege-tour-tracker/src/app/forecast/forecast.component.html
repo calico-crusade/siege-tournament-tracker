@@ -17,7 +17,10 @@
             {{ day.date | date:'EEE - dd' }}
         </button>
     </div>
-    <div [ngClass]="{'matches': true, 'display': selected == day.offset }" *ngFor="let day of matchdays">
+    <div [ngClass]="{'matches': true, 'display': selected == day.offset }" 
+         *ngFor="let day of matchdays"
+         (swipeleft)="swipe(-1)"
+         (swiperight)="swipe(1)">
         <app-match-item *ngFor="let match of day.matches" type="expanded" [match]="match"></app-match-item>
     </div>
 </div>

@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser'; 
+import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { AppHammerConfig } from './hammer.config';
 
 //Our components and other things that need to be declared / imported
 import { AppRoutingModule } from './app-routing.module';
@@ -30,9 +31,15 @@ import { ForecastComponent } from './forecast/forecast.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HammerModule
   ],
-  providers: [],
+  providers: [
+      {
+          provide: HAMMER_GESTURE_CONFIG,
+          useClass: AppHammerConfig
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
